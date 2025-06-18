@@ -1,0 +1,4 @@
+├── images/
+│   ├── product-bottle.jpg
+│   ├── hero-image.jpg
+│   └── logo.svg

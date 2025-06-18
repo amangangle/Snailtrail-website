@@ -1,236 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SnailTrail - Premium Skincare</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnailTrail | Advanced Clinical Skincare</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-<div class="container">
-<div class="logo">
-<h1>SnailTrail</h1>
-<p>Science-backed skincare</p>
-</div>
-<nav>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#product">Our Product</a></li>
-<li><a href="#about">About Us</a></li>
-<li><a href="#contact">Contact</a></li>
-<li><a href="#cart" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
-</ul>
-</nav>
-</div>
-</header>
+    <!-- Header -->
+    <header>
+        <div class="logo">SNAILTRAIL</div>
+        <nav>
+            <ul>
+                <li><a href="#product">Shop</a></li>
+                <li><a href="#science">Science</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#" id="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
-<section id="home" class="hero">
-<div class="container">
-<div class="hero-content">
-<h2>Revolutionary Skincare Formula</h2>
-<p>Experience the power of science and nature combined</p>
-<a href="#product" class="btn">Discover Our Product</a>
-</div>
-</div>
-</section>
+    <!-- Cart Dropdown -->
+    <div class="cart-dropdown" id="cart-dropdown">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be added here dynamically -->
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-total">
+            <p>Total: <span id="cart-total">$0.00</span></p>
+            <a href="#" class="btn checkout-btn">Checkout</a>
+        </div>
+    </div>
 
-<section id="product" class="product-section">
-<div class="container">
-<h2>Our Signature Serum</h2>
-<div class="product">
-<div class="product-image">
-<img src="https://via.placeholder.com/500x500.png?text=SnailTrail+Serum" alt="SnailTrail Serum">
-</div>
-<div class="product-details">
-<h3>Advanced Repair Serum</h3>
-<p class="formula">10% Niacinamide + 5% Snail Mucin + 1% Zinc</p>
-<p class="price">$29.99</p>
-<p class="description">Our scientifically formulated serum combines powerful ingredients to target multiple skin concerns. Niacinamide brightens and reduces inflammation, snail mucin promotes healing and hydration, while zinc helps control oil production and soothe irritation.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Advanced Skincare Backed by Science</h1>
+            <p>Our clinically formulated serum combines 10% Niacinamide, 5% Snail Mucin and 1% Zinc to brighten, heal and balance — without compromise.</p>
+            <a href="#product" class="btn">Shop Now</a>
+            <a href="#science" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/hero-image.jpg" alt="SnailTrail Serum">
+        </div>
+    </section>
 
-<div class="benefits">
-<h4>Key Benefits:</h4>
-<ul>
-<li><i class="fas fa-check"></i> Reduces appearance of pores</li>
-<li><i class="fas fa-check"></i> Improves skin texture</li>
-<li><i class="fas fa-check"></i> Hydrates and plumps skin</li>
-<li><i class="fas fa-check"></i> Calms irritation and redness</li>
-<li><i class="fas fa-check"></i> Helps regulate sebum production</li>
-</ul>
-</div>
+    <!-- Product Section -->
+    <section class="product-section" id="product">
+        <h2 class="section-title">The Signature Serum</h2>
+        <p class="section-subtitle">A multi-functional formulation that targets multiple skin concerns with clinical precision.</p>
+        
+        <div class="product-container">
+            <div class="product-image">
+                <img src="images/product-bottle.jpg" alt="Niacinamide + Snail + Zinc Serum">
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Niacinamide 10% + Snail Mucin 5% + Zinc 1%</h3>
+                <div class="product-price">$24.90</div>
+                <p class="product-desc">A high-strength serum that visibly improves skin clarity, reduces congestion and strengthens the skin barrier. Suitable for all skin types including sensitive.</p>
+                
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus">-</button>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                
+                <button class="btn add-to-cart" data-id="1" data-name="Niacinamide 10% + Snail Mucin 5% + Zinc 1%" data-price="24.90">Add to Cart</button>
+                
+                <div class="ingredients-accordion">
+                    <div class="accordion-header">
+                        <h4 class="ingredients-title">Key Ingredients</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="ingredients-list">
+                            <li><strong>10% Niacinamide</strong> - Reduces inflammation and hyperpigmentation</li>
+                            <li><strong>5% Snail Secretion Filtrate</strong> - Promotes healing and hydration</li>
+                            <li><strong>1% Zinc PCA</strong> - Regulates sebum production and soothes irritation</li>
+                            <li><strong>Hyaluronic Acid</strong> - Attracts and retains moisture</li>
+                            <li><strong>Panthenol</strong> - Soothes and repairs skin barrier</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="quantity-selector">
-<label for="quantity">Quantity:</label>
-<select id="quantity">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select>
-</div>
+    <!-- Science Section -->
+    <section class="science-section" id="science">
+        <h2 class="section-title">The Science of Simple</h2>
+        <p class="section-subtitle">We formulate with clinically proven ingredients at effective concentrations.</p>
+        
+        <div class="science-grid">
+            <div class="science-card">
+                <div class="science-icon"><i class="fas fa-flask"></i></div>
+                <h3>Clinical Formulations</h3>
+                <p>Each ingredient is included at its optimal percentage for visible results, backed by dermatological research.</p>
+            </div>
+            
+            <div class="science-card">
+                <div class="science-icon"><i class="fas fa-leaf"></i></div>
+                <h3>Clean & Ethical</h3>
+                <p>Vegan, cruelty-free and sustainably packaged. No unnecessary fillers, dyes or fragrances.</p>
+            </div>
+            
+            <div class="science-card">
+                <div class="science-icon"><i class="fas fa-certificate"></i></div>
+                <h3>Transparent Standards</h3>
+                <p>Every component is disclosed with its exact percentage. No secrets, just science.</p>
+            </div>
+        </div>
+    </section>
 
-<button class="btn add-to-cart">Add to Cart</button>
-</div>
-</div>
-</div>
-</section>
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <h2 class="section-title">Our Philosophy</h2>
+        <p class="section-subtitle">Skincare should be effective, straightforward and ethical.</p>
+        
+        <div class="about-content">
+            <div class="about-image">
+                <img src="images/lab-image.jpg" alt="Skincare Lab">
+            </div>
+            <div class="about-text">
+                <p>Founded by cosmetic chemists frustrated with the beauty industry's lack of transparency, SnailTrail was born from a desire to create products that actually work.</p>
+                <p>We partner with dermatologists to develop formulations that target specific skin concerns without unnecessary ingredients. Each product undergoes rigorous clinical testing before reaching your skincare routine.</p>
+                <p>Our commitment extends beyond formulas - we use sustainable packaging and operate as a carbon-neutral company.</p>
+            </div>
+        </div>
+    </section>
 
-<section id="about" class="about-section">
-<div class="container">
-<h2>About SnailTrail</h2>
-<div class="about-content">
-<div class="about-text">
-<p>At SnailTrail, we believe in creating effective skincare products backed by scientific research. Our team of dermatologists and cosmetic chemists work together to formulate products that deliver real results.</p>
-<p>We prioritize clean, effective ingredients and sustainable practices in all aspects of our business. Our signature serum is cruelty-free, vegan, and packaged in recyclable materials.</p>
-<p>Our mission is to make advanced skincare accessible without compromising on quality or ethics.</p>
-</div>
-<div class="about-image">
-<img src="https://via.placeholder.com/400x300.png?text=SnailTrail+Lab" alt="SnailTrail Lab">
-</div>
-</div>
-</div>
-</section>
+    <!-- How To Use -->
+    <section class="how-to-use">
+        <h2 class="section-title">How To Use</h2>
+        <p class="section-subtitle">For optimal results, follow this simple routine.</p>
+        
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3 class="step-title">Cleanse</h3>
+                <p class="step-desc">Start with clean, dry skin. Apply after water-based serums and before heavier creams.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3 class="step-title">Apply</h3>
+                <p class="step-desc">Dispense 2-3 drops and gently press into face, neck and décolletage.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3 class="step-title">Follow</h3>
+                <p class="step-desc">Use morning and night. Always finish with SPF during daytime.</p>
+            </div>
+        </div>
+    </section>
 
-<section class="testimonials">
-<div class="container">
-<h2>What Our Customers Say</h2>
-<div class="testimonial-grid">
-<div class="testimonial">
-<div class="rating">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
-<p>"This serum completely transformed my skin. My acne scars have faded significantly and my skin has never looked better!"</p>
-<p class="author">- Sarah M.</p>
-</div>
-<div class="testimonial">
-<div class="rating">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
-<p>"I was skeptical about snail mucin but this product proved me wrong. My skin is hydrated without being greasy."</p>
-<p class="author">- James L.</p>
-</div>
-<div class="testimonial">
-<div class="rating">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star-half-alt"></i>
-</div>
-<p>"After just two weeks, my pores look smaller and my complexion is more even. Worth every penny!"</p>
-<p class="author">- Priya K.</p>
-</div>
-</div>
-</div>
-</section>
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title">Clinical Results</h2>
+        <p class="section-subtitle">Verified customer experiences</p>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"After 4 weeks of use, my acne scars have visibly faded and my skin texture is smoother than ever."</p>
+                <p class="testimonial-author">- Sarah J., Verified Buyer</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"The only serum that doesn't irritate my sensitive skin while actually reducing redness."</p>
+                <p class="testimonial-author">- Michael T., Verified Buyer</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">"Noticeable difference in oil control within days. My makeup stays put all day now."</p>
+                <p class="testimonial-author">- Priya K., Verified Buyer</p>
+            </div>
+        </div>
+    </section>
 
-<section id="contact" class="contact-section">
-<div class="container">
-<h2>Contact Us</h2>
-<div class="contact-content">
-<div class="contact-info">
-<h3>Get in Touch</h3>
-<p><i class="fas fa-envelope"></i> hello@snailtrail.com</p>
-<p><i class="fas fa-phone"></i> (555) 123-4567</p>
-<p><i class="fas fa-map-marker-alt"></i> 123 Skincare Ave, Beauty City, BC 98765</p>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Have questions? Our skincare experts are here to help.</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>help@snailtrail.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+1 (800) 555-1234</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>123 Skincare Ave, Toronto, Canada</p>
+                </div>
+            </div>
+            
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-<div class="social-links">
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-facebook"></i></a>
-<a href="#"><i class="fab fa-twitter"></i></a>
-<a href="#"><i class="fab fa-tiktok"></i></a>
-</div>
-</div>
-<div class="contact-form">
-<form>
-<div class="form-group">
-<label for="name">Name</label>
-<input type="text" id="name" required>
-</div>
-<div class="form-group">
-<label for="email">Email</label>
-<input type="email" id="email" required>
-</div>
-<div class="form-group">
-<label for="message">Message</label>
-<textarea id="message" rows="5" required></textarea>
-</div>
-<button type="submit" class="btn">Send Message</button>
-</form>
-</div>
-</div>
-</div>
-</section>
-</main>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="#product">All Products</a></li>
+                    <li><a href="#">Skincare Guide</a></li>
+                    <li><a href="#">Subscription</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#science">Ingredients</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Clinical Research</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h4>Join Our Newsletter</h4>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 SnailTrail. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
 
-<footer>
-<div class="container">
-<div class="footer-content">
-<div class="footer-section">
-<h3>SnailTrail</h3>
-<p>Science-backed skincare for visible results.</p>
-</div>
-<div class="footer-section">
-<h3>Quick Links</h3>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#product">Our Product</a></li>
-<li><a href="#about">About Us</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>Legal</h3>
-<ul>
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="#">Terms of Service</a></li>
-<li><a href="#">Shipping Policy</a></li>
-<li><a href="#">Return Policy</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>Newsletter</h3>
-<p>Subscribe for updates and special offers</p>
-<form class="newsletter-form">
-<input type="email" placeholder="Your email" required>
-<button type="submit" class="btn">Subscribe</button>
-</form>
-</div>
-</div>
-<div class="footer-bottom">
-<p>&copy; 2023 SnailTrail. All rights reserved.</p>
-</div>
-</div>
-</footer>
-
-<div id="cart" class="cart-modal">
-<div class="cart-content">
-<span class="close-cart">&times;</span>
-<h2>Your Cart</h2>
-<div class="cart-items">
-<!-- Cart items will be added here dynamically -->
-<p class="empty-cart">Your cart is empty</p>
-</div>
-<div class="cart-total">
-<p>Total: $<span class="total-amount">0.00</span></p>
-</div>
-<button class="btn checkout-btn">Proceed to Checkout</button>
-</div>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-
-
