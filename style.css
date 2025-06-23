@@ -225,7 +225,7 @@ nav ul li a:hover {
 }
 
 .hero-image img {
-    max-width: 50%;
+    max-width: auto;
     height: auto;
     border-radius: 4px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
